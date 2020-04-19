@@ -1,0 +1,9 @@
+
+server:
+  type: webapp
+  applicationContextPath: /application
+  adminContextPath: /admin
+  webAppContextPath: /webapp
+  connector:
+    type: http
+    port: 8080
