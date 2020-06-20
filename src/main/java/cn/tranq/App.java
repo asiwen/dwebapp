@@ -1,5 +1,6 @@
 package cn.tranq;
 
+import cn.tranq.openapi.ResourceApi;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -18,6 +19,7 @@ public class App extends Application<AppConfig>
     @Override
     public void run(AppConfig appConfig, Environment environment) throws Exception {
         System.out.println( "Hello World!" );
+        environment.jersey().register(ResourceApi.class);
     }
 
     @Override
