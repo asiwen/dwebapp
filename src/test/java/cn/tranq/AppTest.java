@@ -1,7 +1,8 @@
 package cn.tranq;
 
-import static org.junit.Assert.assertTrue;
-
+import mockit.Mock;
+import mockit.MockUp;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -9,12 +10,23 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+
+
+
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        new MockUp<App>(){
+            @Mock
+            void run(String... args){
+                Assert.assertEquals(2, args.length);
+            }
+        };
+
+        try {
+            App.main(new String[]{"server", "test/conf"});
+        } catch (Exception e) {
+            Assert.fail(e.getMessage());
+        }
     }
 }
