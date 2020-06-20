@@ -149,7 +149,10 @@ private Handler createWebAppContext(Server server){
 
 注：否则访问jsp页面，还会出现：org.apache.jasper.JasperException: Unable to compile class for JSP错误。
 
+4. 在IntelliJ中运行程序
 
+需做如下设置:
+![run_in_idea](run_in_idea.png)
 
 
 
